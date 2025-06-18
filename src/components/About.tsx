@@ -77,13 +77,13 @@ export default function About() {
                   <h3 className="text-xl font-semibold mb-4">Education</h3>
                   <ul className="space-y-6">
                     <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:w-1 before:h-full before:bg-blue-200">
-                      <p className="font-medium text-gray-900">MS in Computer Science</p>
+                      <p className="font-medium text-gray-900">Master's in Computer and Information Sciences</p>
                       <p className="text-blue-600">Saint Louis University</p>
                       <p className="text-sm text-gray-500">Aug 2023 - May 2025</p>
                       <p className="text-sm text-gray-600 mt-1">GPA: 3.6/4.0</p>
                     </li>
                     <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:w-1 before:h-full before:bg-blue-200">
-                      <p className="font-medium text-gray-900">BE in Computer Science</p>
+                      <p className="font-medium text-gray-900">Bachelor's in Computer Science</p>
                       <p className="text-blue-600">Bharath Institute of Higher Education and Research</p>
                       <p className="text-sm text-gray-500">2015 - 2019</p>
                       <p className="text-sm text-gray-600 mt-1">GPA: 8.5/10.0</p>
