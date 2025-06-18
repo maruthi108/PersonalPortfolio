@@ -1,44 +1,60 @@
 import React from 'react';
-import { FileText, Download, Award, Briefcase, GraduationCap } from 'lucide-react';
+import { ExternalLink, Github, Star, Users, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const timeline = [
+const projects = [
   {
-    year: '2023-2025',
-    title: 'MS in Computer Science',
-    organization: 'Saint Louis University',
-    description: 'Focusing on Advanced Software Engineering',
-    current: true,
-    icon: GraduationCap
+    title: 'E-Commerce Platform',
+    description: 'Full-stack e-commerce application with microservices architecture, featuring user authentication, product catalog, shopping cart, and payment integration.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200',
+    technologies: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Stripe API'],
+    features: ['User authentication & authorization', 'Product catalog management', 'Shopping cart functionality', 'Payment gateway integration'],
+    stats: {
+      stars: 156,
+      forks: 34,
+      users: 4200
+    },
+    links: {
+      github: '#',
+      live: '#'
+    }
   },
   {
-    year: '2021-2023',
-    title: 'Associate Software Engineer',
-    organization: 'Accenture',
-    description: '  Implementing designs provided by UX/UI designers into functional and visually appealing web pages using HTML, CSS, and JavaScript. Working closely with UX/UI designers, back-end developers, and other team members to ensure seamless integration and functionality.',
-    icon: Briefcase
+    title: 'Task Management System',
+    description: 'Enterprise-level task management application with real-time collaboration, project tracking, and team management capabilities.',
+    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80&w=1200',
+    technologies: ['Angular', 'Spring Boot', 'MySQL', 'WebSocket', 'Docker'],
+    features: ['Real-time collaboration', 'Project timeline tracking', 'Team management', 'File sharing & comments'],
+    stats: {
+      stars: 128,
+      forks: 45,
+      users: 2300
+    },
+    links: {
+      github: '#',
+      live: '#'
+    }
   },
   {
-    year: '2021-2022',
-    title: 'Front-end Devloper intern',
-    organization: 'TechNova Solutions',
-    description: 'user interfaces, focusing on skills like HTML, CSS, and JavaScript, while collaborating with designers and back-end developers',
-    icon: Briefcase
-  },
-  {
-    year: '2018-2022',
-    title: 'Bachelor of Technology in Computer Science and Engineering',
-    organization: 'Bharath University',
-    description: 'Graduated with distinction, focused on software development',
-    icon: Award
+    title: 'Data Analytics Dashboard',
+    description: 'Interactive dashboard for data visualization and analytics with real-time data processing and customizable reporting features.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+    technologies: ['Python', 'Django', 'PostgreSQL', 'Chart.js', 'Redis'],
+    features: ['Real-time data visualization', 'Custom report generation', 'Data export capabilities', 'Interactive charts & graphs'],
+    stats: {
+      stars: 89,
+      forks: 23,
+      users: 1500
+    },
+    links: {
+      github: '#',
+      live: '#'
+    }
   }
 ];
 
-// Your CV download link
-const CV_DOWNLOAD_URL = 'https://drive.google.com/uc?export=download&id=1f4JtVM2VJE61RTb3msbWCJ4FL-Kw7PkD';
-
-export default function Resume() {
+export default function Projects() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -54,7 +70,7 @@ export default function Resume() {
     }
   };
 
-  const itemVariants = {
+  const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -65,16 +81,12 @@ export default function Resume() {
     }
   };
 
-  const handleDownload = () => {
-    window.open(CV_DOWNLOAD_URL, '_blank');
-  };
-
   return (
-    <section id="resume" className="py-20 bg-white relative overflow-hidden">
+    <section id="projects" className="py-20 bg-gray-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-600 rounded-full filter blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600 rounded-full filter blur-3xl" />
       </div>
 
       <motion.div
@@ -84,76 +96,97 @@ export default function Resume() {
         animate={inView ? "visible" : "hidden"}
         className="container mx-auto px-4 relative z-10"
       >
-        <div className="flex justify-between items-center mb-16">
-          <motion.h2
-            variants={itemVariants}
-            className="text-4xl font-bold text-gray-800"
-          >
-            Resume
-          </motion.h2>
-          <motion.button
-            variants={itemVariants}
-            onClick={handleDownload}
-            className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition-colors shadow-lg hover:shadow-xl"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Download size={20} />
-            <span>Download CV</span>
-          </motion.button>
-        </div>
-
-        <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-blue-200 via-blue-400 to-blue-200"></div>
-          
-          <div className="space-y-12">
-            {timeline.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'justify-start' : 'justify-end'
-                  }`}
-                >
-                  <div
-                    className={`w-1/2 ${
-                      index % 2 === 0 ? 'pr-12' : 'pl-12'
-                    }`}
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      <div className="flex items-center space-x-3 mb-3">
-                        <div className="p-2 bg-blue-100 rounded-lg">
-                          <Icon size={20} className="text-blue-600" />
-                        </div>
-                        <span className="text-sm font-semibold text-blue-600">
-                          {item.year}
-                        </span>
+        <motion.h2
+          variants={cardVariants}
+          className="text-4xl font-bold text-center mb-16 text-gray-800"
+        >
+          Featured Projects
+        </motion.h2>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+            >
+              <div className="relative group">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 text-white">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center">
+                        <Star size={16} className="mr-1" />
+                        <span>{project.stats.stars}</span>
                       </div>
-                      <h3 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h3>
-                      <p className="text-blue-600 mb-2">{item.organization}</p>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
-                      {item.current && (
-                        <span className="inline-block mt-3 px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">
-                          Current
-                        </span>
-                      )}
-                    </motion.div>
+                      <div className="flex items-center">
+                        <Users size={16} className="mr-1" />
+                        <span>{project.stats.users}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Zap size={16} className="mr-1" />
+                        <span>{project.stats.forks}</span>
+                      </div>
+                    </div>
                   </div>
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-md"
-                  />
-                </motion.div>
-              );
-            })}
-          </div>
+                </div>
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-800">{project.title}</h3>
+                <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
+                
+                <div className="mb-4">
+                  <h4 className="font-semibold mb-2 text-gray-700">Technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map(tech => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 rounded-full text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <h4 className="font-semibold mb-2 text-gray-700">Key Features</h4>
+                  <ul className="space-y-1 text-gray-600 text-sm">
+                    {project.features.map(feature => (
+                      <li key={feature} className="flex items-center">
+                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex justify-end space-x-4 mt-6">
+                  <motion.a
+                    href={project.links.github}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    <Github size={20} />
+                  </motion.a>
+                  <motion.a
+                    href={project.links.live}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    <ExternalLink size={20} />
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </section>
