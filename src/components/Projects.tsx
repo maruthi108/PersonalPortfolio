@@ -5,11 +5,27 @@ import { useInView } from 'react-intersection-observer';
 
 const projects = [
   {
-    title: 'Virtual Classroom Assistant',
-    description: 'An AI-powered virtual assistant that helps teachers manage online classrooms, featuring real-time speech recognition and natural language processing.',
-    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=1200',
-    technologies: ['React.js', 'Web Speech API', 'OpenAI', 'Node.js'],
-    features: ['Real-time speech recognition', 'AI-powered responses', 'Interactive whiteboard', 'Student engagement tracking'],
+    title: 'E-Commerce Platform',
+    description: 'Full-stack e-commerce application with microservices architecture, featuring user authentication, product catalog, shopping cart, and payment integration.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200',
+    technologies: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Stripe API'],
+    features: ['User authentication & authorization', 'Product catalog management', 'Shopping cart functionality', 'Payment gateway integration'],
+    stats: {
+      stars: 156,
+      forks: 34,
+      users: 4200
+    },
+    links: {
+      github: '#',
+      live: '#'
+    }
+  },
+  {
+    title: 'Task Management System',
+    description: 'Enterprise-level task management application with real-time collaboration, project tracking, and team management capabilities.',
+    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80&w=1200',
+    technologies: ['Angular', 'Spring Boot', 'MySQL', 'WebSocket', 'Docker'],
+    features: ['Real-time collaboration', 'Project timeline tracking', 'Team management', 'File sharing & comments'],
     stats: {
       stars: 128,
       forks: 45,
@@ -21,31 +37,15 @@ const projects = [
     }
   },
   {
-    title: 'Smart Home Energy Monitor',
-    description: 'IoT-based solution for monitoring and optimizing home energy consumption with real-time analytics and automated controls.',
-    image: 'https://images.unsplash.com/photo-1558449907-39d65710c603?auto=format&fit=crop&q=80&w=1200',
-    technologies: ['Java', 'Spring Boot', 'MQTT', 'PostgreSQL'],
-    features: ['Real-time energy monitoring', 'Automated device control', 'Usage analytics', 'Mobile notifications'],
+    title: 'Data Analytics Dashboard',
+    description: 'Interactive dashboard for data visualization and analytics with real-time data processing and customizable reporting features.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+    technologies: ['Python', 'Django', 'PostgreSQL', 'Chart.js', 'Redis'],
+    features: ['Real-time data visualization', 'Custom report generation', 'Data export capabilities', 'Interactive charts & graphs'],
     stats: {
       stars: 89,
       forks: 23,
       users: 1500
-    },
-    links: {
-      github: '#',
-      live: '#'
-    }
-  },
-  {
-    title: 'IT Career Match Dashboard',
-    description: 'Interactive platform helping IT professionals find career opportunities based on their skills and market demand.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
-    technologies: ['React.js', 'Chart.js', 'Node.js', 'MongoDB'],
-    features: ['Skill assessment', 'Market trend analysis', 'Interactive visualizations', 'Personalized recommendations'],
-    stats: {
-      stars: 156,
-      forks: 34,
-      users: 4200
     },
     links: {
       github: '#',
