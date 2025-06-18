@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:contact@example.com', label: 'Email' }
+    { icon: Github, href: 'https://github.com/maruthimanoj', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/maruthimanoj', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:maruthimanoj.charapalle@gmail.com', label: 'Email' }
   ];
 
   const containerVariants = {
@@ -115,9 +115,9 @@ export default function Hero() {
             variants={itemVariants}
             className="text-lg md:text-xl mb-12 text-gray-300 leading-relaxed max-w-3xl mx-auto"
           >
-            Passionate full-stack developer crafting elegant solutions to complex problems.
+            Passionate software engineer with 4+ years of experience in full-stack development.
             Currently pursuing MS in Computer Science at Saint Louis University,
-            specializing in modern web technologies and cloud architecture.
+            specializing in modern web technologies and scalable software solutions.
           </motion.p>
 
           <motion.div
