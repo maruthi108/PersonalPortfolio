@@ -6,10 +6,9 @@ import { useInView } from 'react-intersection-observer';
 const timeline = [
   {
     year: '2023-2025',
-    title: 'MS in Computer Science',
+    title: "Master's in Computer Science",
     organization: 'Saint Louis University',
     description: 'Advanced coursework in software engineering, algorithms, and machine learning',
-    current: true,
     icon: GraduationCap
   },
   {
@@ -28,7 +27,7 @@ const timeline = [
   },
   {
     year: '2015-2019',
-    title: 'BE in Computer Science',
+    title: "Bachelor's in Computer Science",
     organization: 'Bharath Institute of Higher Education and Research',
     description: 'Graduated with distinction, specialized in software development',
     icon: Award
@@ -36,7 +35,7 @@ const timeline = [
 ];
 
 // Your CV download link
-const CV_DOWNLOAD_URL = 'https://drive.google.com/uc?export=download&id=1f4JtVM2VJE61RTb3msbWCJ4FL-Kw7PkD';
+const CV_DOWNLOAD_URL = 'https://drive.google.com/file/d/1Owpoq-8EQA5jE1_4vVPfiu-obuSrTWS7/view?usp=sharing';
 
 export default function Resume() {
   const [ref, inView] = useInView({
