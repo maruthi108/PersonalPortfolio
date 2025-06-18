@@ -74,8 +74,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'maruthimanoj.c@gmail.com',
-      href: 'mailto:maruthimanoj.c@gmail.com'
+      value: 'maruthimanoj.charapalle@gmail.com',
+      href: 'mailto:maruthimanoj.charapalle@gmail.com'
     },
     {
       icon: Phone,
