@@ -80,7 +80,7 @@ export default function About() {
                       <p className="font-medium text-gray-900">MS in Computer Science</p>
                       <p className="text-blue-600">Saint Louis University</p>
                       <p className="text-sm text-gray-500">Aug 2023 - May 2025</p>
-                      <p className="text-sm text-gray-600 mt-1">GPA: 3.8/4.0</p>
+                      <p className="text-sm text-gray-600 mt-1">GPA: 3.6/4.0</p>
                     </li>
                     <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:w-1 before:h-full before:bg-blue-200">
                       <p className="font-medium text-gray-900">BE in Computer Science</p>
